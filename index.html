@@ -1,147 +1,652 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'unsafe-inline'; script-src 'unsafe-inline';">
-  <title>Priyanshu Sarangi | Cybersecurity & Ethical Hacking Portfolio</title>
+  <meta name="theme-color" content="#f8fafc">
+  <meta name="description" content="Priyanshu Sarangi | Cybersecurity enthusiast focused on network security, VAPT and information security.">
+  <title>Priyanshu Sarangi | Cybersecurity Portfolio</title>
+
   <style>
-    :root { --bg: #0a0e17; --card: #111827; --border: #1f2937; --accent: #38bdf8; --green: #10b981; --text: #f3f4f6; --muted: #9ca3af; }
+    :root {
+      --bg: #f8fafc;
+      --white: #ffffff;
+      --navy: #142b49;
+      --blue: #245b91;
+      --teal: #168b83;
+      --text: #263445;
+      --muted: #68778a;
+      --border: #e3e9f0;
+      --soft: #edf3f8;
+      --shadow: 0 12px 35px rgba(20,43,73,.06);
+    }
+
     * { box-sizing: border-box; scroll-behavior: smooth; }
-    body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); margin: 0; padding: 0; line-height: 1.6; }
-    nav { background: rgba(17, 24, 39, 0.95); border-bottom: 1px solid var(--border); padding: 15px 20px; position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; max-width: 1100px; margin: auto; }
-    .logo { font-weight: 700; font-size: 1.2rem; color: var(--accent); }
-    .nav-links a { color: var(--muted); text-decoration: none; margin-left: 20px; font-size: 0.95rem; }
-    .nav-links a:hover { color: var(--accent); }
-    .container { max-width: 1050px; margin: auto; padding: 40px 20px; }
-    .hero { text-align: center; padding: 50px 20px; background: radial-gradient(circle at top, #1e293b 0%, var(--bg) 70%); border-radius: 16px; border: 1px solid var(--border); margin-bottom: 50px; }
-    .status-pill { display: inline-block; background: rgba(16, 185, 129, 0.15); color: var(--green); border: 1px solid rgba(16, 185, 129, 0.4); padding: 5px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 15px; }
-    .hero h1 { font-size: 2.6rem; margin: 10px 0; color: #ffffff; }
-    .hero p { max-width: 650px; margin: 15px auto 25px; color: var(--muted); font-size: 1.05rem; }
-    .cta-group { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-    .btn { padding: 10px 22px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.95rem; }
-    .btn-primary { background: var(--accent); color: #0a0e17; }
-    .btn-outline { border: 1px solid var(--border); color: var(--text); background: var(--card); }
-    .section-title { font-size: 1.5rem; margin: 45px 0 20px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
-    .section-title span { color: var(--accent); }
-    .skills-grid, .projects-grid, .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
-    .skill-box, .project-card, .cert-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
-    .skill-box h3 { margin: 0 0 12px; font-size: 1.05rem; color: var(--accent); }
-    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
-    .tag { background: #1f2937; color: #e5e7eb; padding: 5px 12px; border-radius: 6px; font-size: 0.85rem; }
-    .cert-card { padding: 0; overflow: hidden; }
-    .img-wrap { position: relative; cursor: zoom-in; background: #000; }
-    .img-wrap img { width: 100%; height: 200px; object-fit: cover; display: block; }
-    .zoom-hint { position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.8); color: #fff; font-size: 0.75rem; padding: 4px 8px; border-radius: 4px; }
-    .cert-info { padding: 16px; }
-    .cert-info h4 { margin: 0 0 6px; font-size: 1.05rem; }
-    .cert-issuer { color: var(--muted); font-size: 0.85rem; margin-bottom: 12px; display: block; }
-    .verify-btn { display: inline-block; background: rgba(16, 185, 129, 0.15); color: var(--green); border: 1px solid rgba(16, 185, 129, 0.4); text-decoration: none; padding: 6px 14px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; }
-    .modal { display: none; position: fixed; z-index: 999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.92); justify-content: center; align-items: center; padding: 20px; }
-    .modal img { max-width: 95%; max-height: 90vh; border-radius: 8px; border: 2px solid var(--accent); }
-    .close-modal { position: absolute; top: 20px; right: 30px; color: #fff; font-size: 35px; cursor: pointer; }
-    footer { text-align: center; padding: 30px 10px; color: var(--muted); font-size: 0.9rem; border-top: 1px solid var(--border); margin-top: 50px; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      line-height: 1.7;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+
+    /* Navigation */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      color: var(--navy);
+      font-size: 1.25rem;
+      font-weight: 750;
+      letter-spacing: -.5px;
+    }
+
+    .logo span { color: var(--teal); }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-links a {
+      font-size: .9rem;
+      font-weight: 600;
+      color: var(--muted);
+      transition: color .2s;
+    }
+
+    .nav-links a:hover { color: var(--teal); }
+
+    /* Hero */
+
+    .hero {
+      padding: 105px 0 95px;
+      display: grid;
+      grid-template-columns: 1.5fr .8fr;
+      align-items: center;
+      gap: 55px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--teal);
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      background: #16a085;
+      border-radius: 50%;
+    }
+
+    .hero h1 {
+      color: var(--navy);
+      font-size: clamp(2.6rem, 6vw, 4.3rem);
+      line-height: 1.12;
+      letter-spacing: -2px;
+      margin: 0 0 16px;
+    }
+
+    .hero h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--blue);
+      margin: 0 0 20px;
+    }
+
+    .hero p {
+      max-width: 620px;
+      color: var(--muted);
+      font-size: 1.02rem;
+      margin-bottom: 30px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 12px 21px;
+      border-radius: 7px;
+      font-size: .9rem;
+      font-weight: 650;
+      transition: .2s;
+    }
+
+    .btn-primary {
+      color: white;
+      background: var(--navy);
+    }
+
+    .btn-primary:hover { background: var(--blue); transform: translateY(-2px); }
+
+    .btn-secondary {
+      color: var(--navy);
+      border: 1px solid #cbd5e1;
+      background: white;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--teal);
+      color: var(--teal);
+    }
+
+    .hero-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card h3 {
+      margin: 0 0 22px;
+      color: var(--navy);
+      font-size: 1.05rem;
+    }
+
+    .quick-item {
+      padding: 13px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .quick-item:last-child { border: 0; }
+
+    .quick-item strong {
+      display: block;
+      color: var(--navy);
+      font-size: .9rem;
+    }
+
+    .quick-item span {
+      font-size: .83rem;
+      color: var(--muted);
+    }
+
+    /* Sections */
+
+    section.content-section { padding: 65px 0; }
+
+    .section-heading { margin-bottom: 32px; }
+
+    .section-number {
+      color: var(--teal);
+      font-size: .8rem;
+      font-weight: 750;
+      letter-spacing: 1.5px;
+    }
+
+    .section-heading h2 {
+      color: var(--navy);
+      font-size: 2rem;
+      margin: 5px 0;
+      letter-spacing: -.7px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      margin: 5px 0;
+      font-size: .95rem;
+    }
+
+    /* Skills */
+
+    .skills-grid, .projects-grid, .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .skill-box, .project-card, .cert-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 11px;
+      padding: 24px;
+      transition: .2s;
+    }
+
+    .skill-box:hover, .project-card:hover, .cert-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+
+    .skill-box h3, .project-card h3 {
+      color: var(--navy);
+      font-size: 1.05rem;
+      margin: 0 0 17px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      background: var(--soft);
+      color: #36516c;
+      border: 1px solid #e1eaf2;
+      border-radius: 5px;
+      padding: 5px 10px;
+      font-size: .79rem;
+      font-weight: 550;
+    }
+
+    /* Projects */
+
+    #projects { background: #f0f4f8; }
+
+    .project-card { padding: 26px; }
+
+    .project-label {
+      color: var(--teal);
+      font-size: .75rem;
+      font-weight: 750;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      font-size: .9rem;
+      min-height: 75px;
+    }
+
+    /* Certificates */
+
+    .cert-card {
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .img-wrap {
+      position: relative;
+      background: #edf1f5;
+      cursor: zoom-in;
+    }
+
+    .img-wrap img {
+      width: 100%;
+      height: 205px;
+      object-fit: contain;
+      display: block;
+      padding: 8px;
+    }
+
+    .cert-info { padding: 20px; }
+
+    .cert-info h3 {
+      color: var(--navy);
+      font-size: .98rem;
+      margin: 0 0 7px;
+    }
+
+    .cert-issuer {
+      color: var(--muted);
+      font-size: .82rem;
+      display: block;
+    }
+
+    .verify-btn {
+      display: inline-block;
+      margin-top: 15px;
+      color: var(--teal);
+      font-size: .83rem;
+      font-weight: 700;
+    }
+
+    /* Contact */
+
+    .contact-box {
+      padding: 42px;
+      border-radius: 13px;
+      background: var(--navy);
+      color: white;
+      text-align: center;
+    }
+
+    .contact-box h2 { margin: 0 0 10px; font-size: 1.8rem; }
+
+    .contact-box p {
+      color: #c5d2e0;
+      margin: 0 0 24px;
+    }
+
+    .contact-box .btn {
+      background: white;
+      color: var(--navy);
+    }
+
+    footer {
+      padding: 25px 10px;
+      text-align: center;
+      color: var(--muted);
+      font-size: .83rem;
+      border-top: 1px solid var(--border);
+    }
+
+    /* Certificate modal */
+
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      background: rgba(10,20,35,.92);
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .modal img {
+      max-width: 95%;
+      max-height: 88vh;
+      object-fit: contain;
+      border-radius: 7px;
+      background: white;
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 15px;
+      right: 25px;
+      color: white;
+      font-size: 38px;
+      cursor: pointer;
+    }
+
+    @media(max-width: 800px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 75px 0;
+        gap: 30px;
+      }
+
+      .skills-grid, .projects-grid, .cert-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media(max-width: 560px) {
+      .nav-inner { min-height: 65px; }
+      .nav-links { gap: 12px; }
+      .nav-links a { font-size: .76rem; }
+      .logo { font-size: 1.05rem; }
+      .hero h1 { letter-spacing: -1px; }
+      .skills-grid, .projects-grid, .cert-grid {
+        grid-template-columns: 1fr;
+      }
+      section.content-section { padding: 45px 0; }
+      .contact-box { padding: 30px 20px; }
+    }
   </style>
 </head>
+
 <body>
-  <nav>
-    <div class="logo">&lt;Priyanshu /&gt;</div>
+
+<nav>
+  <div class="container nav-inner">
+    <a href="#" class="logo">Priyanshu<span>.</span></a>
     <div class="nav-links">
+      <a href="#about">About</a>
       <a href="#skills">Skills</a>
-      <a href="#projects">Labs</a>
+      <a href="#projects">Projects</a>
       <a href="#certificates">Certificates</a>
     </div>
-  </nav>
+  </div>
+</nav>
 
-  <div class="container">
-    <section class="hero">
-      <div class="status-pill">● Open to Cybersecurity & VAPT Opportunities</div>
-      <h1>Priyanshu Sarangi</h1>
-      <p>Aspiring Ethical Hacker & Cybersecurity Enthusiast focused on Network Security, Web Application Penetration Testing, and AI-Driven Security Workflows.</p>
-      <div class="cta-group">
-        <a href="#certificates" class="btn btn-primary">View Credentials</a>
-        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline">GitHub Profile</a>
-        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline">LinkedIn</a>
+<main class="container">
+
+  <section class="hero" id="about">
+    <div>
+      <div class="eyebrow">
+        <span class="dot"></span>
+        Open to Opportunities
       </div>
-    </section>
 
-    <h2 id="skills" class="section-title"><span>01.</span> Technical Arsenal</h2>
+      <h1>Priyanshu Sarangi</h1>
+
+      <h2>Cybersecurity Enthusiast | Aspiring Ethical Hacker</h2>
+
+      <p>
+        Passionate about cybersecurity, network security and web application
+        security. Developing practical skills in vulnerability assessment,
+        Linux environments, networking and security tools.
+        Committed to continuous learning and building practical experience
+        in information security.
+      </p>
+
+      <div class="actions">
+        <a href="#projects" class="btn btn-primary">Explore Projects ↗</a>
+        <a href="#certificates" class="btn btn-secondary">View Certificates</a>
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer"
+           class="btn btn-secondary">GitHub ↗</a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <h3>Professional Overview</h3>
+
+      <div class="quick-item">
+        <strong>Primary Interest</strong>
+        <span>Cybersecurity & Information Security</span>
+      </div>
+
+      <div class="quick-item">
+        <strong>Security Focus</strong>
+        <span>Network Security & VAPT</span>
+      </div>
+
+      <div class="quick-item">
+        <strong>Tools & Technologies</strong>
+        <span>Nmap, Burp Suite, Wireshark, Kali Linux</span>
+      </div>
+
+      <div class="quick-item">
+        <strong>Programming</strong>
+        <span>Python, HTML, JavaScript, Bash</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section" id="skills">
+    <div class="section-heading">
+      <span class="section-number">01 / EXPERTISE</span>
+      <h2>Technical Skills</h2>
+      <p>Tools, technologies and concepts I am learning and working with.</p>
+    </div>
+
     <div class="skills-grid">
       <div class="skill-box">
-        <h3>Offensive Security & VAPT</h3>
-        <div class="tags"><span class="tag">Nmap</span><span class="tag">Burp Suite</span><span class="tag">Wireshark</span><span class="tag">OWASP Top 10</span></div>
+        <h3>Security & VAPT</h3>
+        <div class="tags">
+          <span class="tag">Nmap</span>
+          <span class="tag">Burp Suite</span>
+          <span class="tag">Wireshark</span>
+          <span class="tag">OWASP Top 10</span>
+        </div>
       </div>
+
       <div class="skill-box">
         <h3>Systems & Networking</h3>
-        <div class="tags"><span class="tag">Kali Linux</span><span class="tag">TCP/IP & DNS</span><span class="tag">Bash</span><span class="tag">Windows CMD</span></div>
+        <div class="tags">
+          <span class="tag">Kali Linux</span>
+          <span class="tag">TCP/IP</span>
+          <span class="tag">DNS</span>
+          <span class="tag">Bash</span>
+          <span class="tag">Windows CMD</span>
+        </div>
       </div>
+
       <div class="skill-box">
         <h3>Programming & AI</h3>
-        <div class="tags"><span class="tag">Python</span><span class="tag">HTML / JS</span><span class="tag">Prompt Engineering</span><span class="tag">Data Analysis</span></div>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">HTML</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">Prompt Engineering</span>
+          <span class="tag">Data Analysis</span>
+        </div>
       </div>
+    </div>
+  </section>
+
+  <section class="content-section" id="projects">
+    <div class="section-heading">
+      <span class="section-number">02 / EXPERIENCE</span>
+      <h2>Projects & Practical Learning</h2>
+      <p>Selected simulations and practical learning experiences.</p>
     </div>
 
-    <h2 id="projects" class="section-title"><span>02.</span> Hands-On Simulations & Labs</h2>
     <div class="projects-grid">
       <div class="project-card">
+        <span class="project-label">Data Analytics</span>
         <h3>Deloitte Forensic Data Analytics</h3>
-        <p>Analyzed machine downtime telemetry and classified forensic pay-equality datasets using structured analytical workflows.</p>
-        <div class="tags"><span class="tag">Data Forensics</span><span class="tag">Excel</span><span class="tag">Visualization</span></div>
+        <p>
+          Completed a virtual job simulation involving machine downtime
+          telemetry analysis and pay-equality dataset classification
+          through structured analytical workflows.
+        </p>
+        <div class="tags">
+          <span class="tag">Data Analysis</span>
+          <span class="tag">Excel</span>
+          <span class="tag">Forage</span>
+        </div>
       </div>
+
       <div class="project-card">
+        <span class="project-label">Generative AI</span>
         <h3>Generative AI Prompt Workflows</h3>
-        <p>Built structured LLM prompting systems for research automation, threat summarization, and productivity workflows.</p>
-        <div class="tags"><span class="tag">Generative AI</span><span class="tag">LLMs</span><span class="tag">Automation</span></div>
+        <p>
+          Explored structured LLM prompting techniques for research,
+          information summarization and productivity workflows.
+        </p>
+        <div class="tags">
+          <span class="tag">Generative AI</span>
+          <span class="tag">LLMs</span>
+          <span class="tag">Prompt Engineering</span>
+        </div>
       </div>
     </div>
-    <h2 id="certificates" class="section-title"><span>03.</span> Verified Certificates & Badges</h2>
+  </section>
+
+  <section class="content-section" id="certificates">
+    <div class="section-heading">
+      <span class="section-number">03 / CREDENTIALS</span>
+      <h2>Certifications & Achievements</h2>
+      <p>Professional learning and completed credentials.</p>
+    </div>
+
     <div class="cert-grid">
+
       <div class="cert-card">
         <div class="img-wrap" onclick="openModal('cert1.jpg')">
-          <img src="cert1.jpg" alt="Certificate 1">
-          <span class="zoom-hint">🔍 Click to Zoom</span>
+          <img src="cert1.jpg" alt="Generative AI certificate">
         </div>
         <div class="cert-info">
-          <h4>Generative AI: From Prompts to Partnership</h4>
-          <span class="cert-issuer">Issued by LinkedIn Learning</span>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="verify-btn">Verify Credential ↗</a>
+          <h3>Generative AI: From Prompts to Partnership</h3>
+          <span class="cert-issuer">LinkedIn Learning</span>
         </div>
       </div>
 
       <div class="cert-card">
         <div class="img-wrap" onclick="openModal('cert2.jpg')">
-          <img src="cert2.jpg" alt="Certificate 2">
-          <span class="zoom-hint">🔍 Click to Zoom</span>
+          <img src="cert2.jpg" alt="Deloitte data analytics certificate">
         </div>
         <div class="cert-info">
-          <h4>Data Analytics Job Simulation</h4>
-          <span class="cert-issuer">Issued by Deloitte Australia (Forage)</span>
+          <h3>Data Analytics Job Simulation</h3>
+          <span class="cert-issuer">Deloitte Australia · Forage</span>
         </div>
       </div>
 
       <div class="cert-card">
         <div class="img-wrap" onclick="openModal('cert3.jpg')">
-          <img src="cert3.jpg" alt="Certificate 3">
-          <span class="zoom-hint">🔍 Click to Zoom</span>
+          <img src="cert3.jpg" alt="Cybersecurity and IT fundamentals certificate">
         </div>
         <div class="cert-info">
-          <h4>Cybersecurity & IT Fundamentals</h4>
+          <h3>Cybersecurity & IT Fundamentals</h3>
           <span class="cert-issuer">Verified Completion Credential</span>
         </div>
       </div>
+
     </div>
-  </div>
+  </section>
 
-  <div id="imgModal" class="modal" onclick="closeModal()">
-    <span class="close-modal">&times;</span>
-    <img id="modalImg" src="" alt="Full Certificate">
-  </div>
+  <section class="content-section" id="contact">
+    <div class="contact-box">
+      <h2>Let's Connect</h2>
+      <p>
+        Interested in cybersecurity, collaboration and professional opportunities.
+        Feel free to connect.
+      </p>
+      <a href="mailto:YOUR_EMAIL@example.com" class="btn">
+        Get in Touch ↗
+      </a>
+    </div>
+  </section>
 
-  <footer>© 2026 Priyanshu Sarangi • Hosted Securely on GitHub Pages</footer>
+</main>
 
-  <script>
-    function openModal(src) { document.getElementById('modalImg').src = src; document.getElementById('imgModal').style.display = 'flex'; }
-    function closeModal() { document.getElementById('imgModal').style.display = 'none'; }
-  </script>
+<div id="imgModal" class="modal" onclick="closeModal()">
+  <span class="close-modal">&times;</span>
+  <img id="modalImg" src="" alt="Certificate preview">
+</div>
+
+<footer>
+  © 2026 Priyanshu Sarangi. All rights reserved.
+</footer>
+
+<script>
+  function openModal(src) {
+    const modal = document.getElementById('imgModal');
+    document.getElementById('modalImg').src = src;
+    modal.style.display = 'flex';
+  }
+
+  function closeModal() {
+    document.getElementById('imgModal').style.display = 'none';
+  }
+
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') closeModal();
+  });
+</script>
+
 </body>
 </html>
