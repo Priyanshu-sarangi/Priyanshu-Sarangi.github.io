@@ -4,164 +4,64 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'unsafe-inline'; script-src 'unsafe-inline';">
-  <title>Priyanshu Sarangi | Cybersecurity & AI Security</title>
+  <title>Priyanshu Sarangi | Cybersecurity & Ethical Hacking Portfolio</title>
   <style>
-    :root { --bg: #09090b; --surface: #121215; --border: #27272a; --text: #fafafa; --muted: #a1a1aa; --green: #10b981; }
+    :root { --bg: #0a0e17; --card: #111827; --border: #1f2937; --accent: #38bdf8; --green: #10b981; --text: #f3f4f6; --muted: #9ca3af; }
     * { box-sizing: border-box; scroll-behavior: smooth; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); margin: 0; line-height: 1.6; }
-    nav { background: rgba(9, 9, 11, 0.9); border-bottom: 1px solid var(--border); padding: 15px 20px; position: sticky; top: 0; z-index: 100; }
-    .nav-in { max-width: 1000px; margin: auto; display: flex; justify-content: space-between; align-items: center; }
-    .logo { font-family: monospace; font-weight: 700; font-size: 1rem; color: var(--text); }
-    .nav-links a { color: var(--muted); text-decoration: none; margin-left: 20px; font-size: 0.9rem; }
-    .nav-links a:hover { color: var(--text); }
-    .container { max-width: 1000px; margin: auto; padding: 40px 20px; }
-    .hero { padding: 30px 0 45px; border-bottom: 1px solid var(--border); margin-bottom: 40px; }
-    .pill { display: inline-flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--muted); background: var(--surface); border: 1px solid var(--border); padding: 4px 12px; border-radius: 20px; margin-bottom: 15px; }
-    .dot { width: 6px; height: 6px; background: var(--green); border-radius: 50%; }
-    .hero h1 { font-size: 2.5rem; margin: 0 0 12px; letter-spacing: -0.02em; }
-    .hero p { max-width: 600px; color: var(--muted); margin: 0 0 24px; }
-    .btns { display: flex; gap: 12px; flex-wrap: wrap; }
-    .btn { padding: 10px 18px; border-radius: 6px; text-decoration: none; font-weight: 500; font-size: 0.9rem; }
-    .btn-w { background: var(--text); color: var(--bg); }
-    .btn-d { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
-    .credly-box { background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--green); border-radius: 8px; padding: 18px 20px; margin-bottom: 40px; display: flex; justify-content: space-between; align-items: center; gap: 15px; flex-wrap: wrap; }
-    .credly-box h3 { margin: 0 0 4px; font-size: 1rem; }
-    .credly-box p { margin: 0; font-size: 0.85rem; color: var(--muted); }
-    .sec-head { display: flex; justify-content: space-between; align-items: center; margin: 40px 0 20px; }
-    .sec-head h2 { font-size: 1.25rem; margin: 0; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 16px; }
-    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 20px; }
-    .card h3 { margin: 0 0 10px; font-size: 1rem; }
-    .card p { margin: 0 0 14px; font-size: 0.88rem; color: var(--muted); }
-    .tags { display: flex; flex-wrap: wrap; gap: 6px; }
-    .tag { background: var(--bg); border: 1px solid var(--border); color: var(--muted); padding: 3px 9px; border-radius: 4px; font-size: 0.78rem; font-family: monospace; }
-    .cert { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
-    .img-wrap { position: relative; cursor: zoom-in; background: #000; border-bottom: 1px solid var(--border); }
-    .img-wrap img { width: 100%; height: 190px; object-fit: cover; display: block; }
-    .zoom { position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.85); color: #ccc; font-size: 0.72rem; padding: 3px 8px; border-radius: 4px; }
-    .c-info { padding: 16px; }
-    .c-info h4 { margin: 0 0 4px; font-size: 0.95rem; }
-    .c-info span { display: block; color: var(--muted); font-size: 0.82rem; margin-bottom: 10px; }
-    .v-link { color: var(--green); font-size: 0.82rem; text-decoration: none; font-weight: 500; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); margin: 0; padding: 0; line-height: 1.6; }
+    nav { background: rgba(17, 24, 39, 0.95); border-bottom: 1px solid var(--border); padding: 15px 20px; position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; max-width: 1100px; margin: auto; }
+    .logo { font-weight: 700; font-size: 1.2rem; color: var(--accent); }
+    .nav-links a { color: var(--muted); text-decoration: none; margin-left: 20px; font-size: 0.95rem; }
+    .nav-links a:hover { color: var(--accent); }
+    .container { max-width: 1050px; margin: auto; padding: 40px 20px; }
+    .hero { text-align: center; padding: 50px 20px; background: radial-gradient(circle at top, #1e293b 0%, var(--bg) 70%); border-radius: 16px; border: 1px solid var(--border); margin-bottom: 50px; }
+    .status-pill { display: inline-block; background: rgba(16, 185, 129, 0.15); color: var(--green); border: 1px solid rgba(16, 185, 129, 0.4); padding: 5px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 15px; }
+    .hero h1 { font-size: 2.6rem; margin: 10px 0; color: #ffffff; }
+    .hero p { max-width: 650px; margin: 15px auto 25px; color: var(--muted); font-size: 1.05rem; }
+    .cta-group { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+    .btn { padding: 10px 22px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.95rem; }
+    .btn-primary { background: var(--accent); color: #0a0e17; }
+    .btn-outline { border: 1px solid var(--border); color: var(--text); background: var(--card); }
+    .section-title { font-size: 1.5rem; margin: 45px 0 20px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+    .section-title span { color: var(--accent); }
+    .skills-grid, .projects-grid, .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+    .skill-box, .project-card, .cert-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+    .skill-box h3 { margin: 0 0 12px; font-size: 1.05rem; color: var(--accent); }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag { background: #1f2937; color: #e5e7eb; padding: 5px 12px; border-radius: 6px; font-size: 0.85rem; }
+    .cert-card { padding: 0; overflow: hidden; }
+    .img-wrap { position: relative; cursor: zoom-in; background: #000; }
+    .img-wrap img { width: 100%; height: 200px; object-fit: cover; display: block; }
+    .zoom-hint { position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.8); color: #fff; font-size: 0.75rem; padding: 4px 8px; border-radius: 4px; }
+    .cert-info { padding: 16px; }
+    .cert-info h4 { margin: 0 0 6px; font-size: 1.05rem; }
+    .cert-issuer { color: var(--muted); font-size: 0.85rem; margin-bottom: 12px; display: block; }
+    .verify-btn { display: inline-block; background: rgba(16, 185, 129, 0.15); color: var(--green); border: 1px solid rgba(16, 185, 129, 0.4); text-decoration: none; padding: 6px 14px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; }
     .modal { display: none; position: fixed; z-index: 999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.92); justify-content: center; align-items: center; padding: 20px; }
-    .modal img { max-width: 95%; max-height: 90vh; border-radius: 6px; }
-    .close { position: absolute; top: 20px; right: 30px; color: #fff; font-size: 32px; cursor: pointer; }
-    footer { text-align: center; padding: 30px 20px; color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 50px; }
+    .modal img { max-width: 95%; max-height: 90vh; border-radius: 8px; border: 2px solid var(--accent); }
+    .close-modal { position: absolute; top: 20px; right: 30px; color: #fff; font-size: 35px; cursor: pointer; }
+    footer { text-align: center; padding: 30px 10px; color: var(--muted); font-size: 0.9rem; border-top: 1px solid var(--border); margin-top: 50px; }
   </style>
 </head>
 <body>
+  <!-- Navigation, Hero, Skills, Labs, Certificates, and Footer Section -->
   <nav>
-    <div class="nav-in">
-      <div class="logo">priyanshu.sec</div>
-      <div class="nav-links">
-        <a href="#skills">Skills</a>
-        <a href="#labs">Labs</a>
-        <a href="#certificates">Credentials</a>
-      </div>
+    <div class="logo">&lt;Priyanshu /&gt;</div>
+    <div class="nav-links">
+      <a href="#skills">Skills</a>
+      <a href="#projects">Labs</a>
+      <a href="#certificates">Certificates</a>
     </div>
   </nav>
 
   <div class="container">
     <section class="hero">
-      <div class="pill"><span class="dot"></span> Cybersecurity &amp; AI Security Portfolio</div>
+      <div class="status-pill">● Welcome To My Portfolio</div>
       <h1>Priyanshu Sarangi</h1>
-      <p>Focused on Network Security, Vulnerability Assessment, Penetration Testing (VAPT), and AI-Driven Security Automation.</p>
-      <div class="btns">
-        <a href="https://credly.com" target="_blank" rel="noopener noreferrer" class="btn btn-w">Credly Profile ↗</a>
-        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn-d">GitHub</a>
-        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="btn btn-d">LinkedIn</a>
-      </div>
+      <p>Aspiring Ethical Hacker & Cybersecurity Enthusiast focused on Network Security, Web Application Penetration Testing, and AI-Driven Security Workflows.</p>
     </section>
-
-    <div class="credly-box">
-      <div>
-        <h3>Official Digital Credentials ✓</h3>
-        <p>Independently verify all cybersecurity and cloud AI badges via my public Credly profile.</p>
-      </div>
-      <a href="https://credly.com" target="_blank" rel="noopener noreferrer" class="btn btn-d">Verify on Credly ↗</a>
-    </div>
-
-    <div class="sec-head" id="skills">
-      <h2>01. Core Competencies</h2>
-    </div>
-    <div class="grid">
-      <div class="card">
-        <h3>Offensive Security &amp; VAPT</h3>
-        <div class="tags">
-          <span class="tag">Nmap</span>
-          <span class="tag">Burp Suite</span>
-          <span class="tag">Wireshark</span>
-          <span class="tag">OWASP Top 10</span>
-        </div>
-      </div>
-      <div class="card">
-        <h3>Systems &amp; Networking</h3>
-        <div class="tags">
-          <span class="tag">Kali Linux</span>
-          <span class="tag">TCP/IP &amp; DNS</span>
-          <span class="tag">Bash</span>
-          <span class="tag">Windows CMD</span>
-        </div>
-      </div>
-      <div class="card">
-        <h3>AI &amp; Automation</h3>
-        <div class="tags">
-          <span class="tag">Python</span>
-          <span class="tag">Prompt Engineering</span>
-          <span class="tag">Claude / LLMs</span>
-          <span class="tag">HTML / JS</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="sec-head" id="labs">
-      <h2>02. Practical Labs &amp; Workflows</h2>
-    </div>
-    <div class="grid">
-      <div class="card">
-        <h3>Network Reconnaissance &amp; Traffic Analysis</h3>
-        <p>Conducted packet inspection, service enumeration, and vulnerability identification across simulated Linux and Windows environments.</p>
-        <div class="tags">
-          <span class="tag">Nmap</span>
-          <span class="tag">Wireshark</span>
-          <span class="tag">TCP/IP</span>
-          <span class="tag">Kali Linux</span>
-        </div>
-      </div>
-      <div class="card">
-        <h3>Generative AI Prompt Workflows</h3>
-        <p>Built structured LLM prompting systems for research automation, threat summarization, and productivity workflows.</p>
-        <div class="tags">
-          <span class="tag">Generative AI</span>
-          <span class="tag">LLMs</span>
-          <span class="tag">Automation</span>
-        </div>
-      </div>
-    </div>
-    <div class="sec-head" id="certificates">
-      <h2>03. Verified Certifications</h2>
-      <a href="https://credly.com" target="_blank" rel="noopener noreferrer" class="v-link">View All on Credly ↗</a>
-    </div>
-    <div class="grid">
-      <!-- Certification cards include: Cybersecurity & IT Fundamentals, Generative AI: From Prompts to Partnership, and Fundamentals of Prompt Engineering with Claude -->
-    </div>
-  </div>
-
-  <div id="imgModal" class="modal" onclick="closeModal()">
-    <span class="close">&times;</span>
-    <img id="modalImg" src="" alt="Full Certificate">
   </div>
 
   <footer>© 2026 Priyanshu Sarangi • Hosted Securely on GitHub Pages</footer>
-
-  <script>
-    function openModal(src) {
-      document.getElementById('modalImg').src = src;
-      document.getElementById('imgModal').style.display = 'flex';
-    }
-    function closeModal() {
-      document.getElementById('imgModal').style.display = 'none';
-    }
-  </script>
 </body>
 </html>
